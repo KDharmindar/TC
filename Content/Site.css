@@ -1,0 +1,104 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 380px;
+}
+
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+/*Background image for buttons*/
+.panel-heading {
+    height: 30px;
+}
+
+.buttons {
+    background-image: url('../Content/images/background/buttons-bg.png') !important;
+    background-repeat: repeat-y !important;
+    background-size: contain !important;
+    box-shadow: inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.8) !important;
+    padding: 0px !important;
+}
+
+    .buttons h5.panel-title {
+        text-align: center;
+        padding-top: 5px;
+    }
+.panel-body {
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 20px;
+    font-weight: normal;
+    height: 128px;
+    width: 100%;
+    text-align: center;
+    color: #0078CA;
+}
+
+
+
+
+/*@media screen and (min-width:360px){
+    .buttonContainer {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+}*/
+
+.buttonContainer {
+    width: 300px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+/*margin between rows*/
+.row-margin{
+    margin-top:5px;
+}

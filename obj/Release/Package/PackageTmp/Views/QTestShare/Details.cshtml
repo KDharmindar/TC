@@ -1,0 +1,58 @@
+﻿@model tutioncloud.Models.QTestShare
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>QTestShare</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShareBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShareBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShareTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShareTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShareDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShareDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QTest.QTNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QTest.QTNote)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TestShareID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

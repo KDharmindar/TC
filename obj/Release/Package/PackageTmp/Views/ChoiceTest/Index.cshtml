@@ -1,0 +1,57 @@
+﻿@model IEnumerable<tutioncloud.Models.ChoiceTest>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Result)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeSkip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestAppearance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Choicer.CQuestion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTest.CTNote)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Result)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeSkip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestAppearance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Choicer.CQuestion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTest.CTNote)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ChoiceTestID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ChoiceTestID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ChoiceTestID })
+        </td>
+    </tr>
+}
+
+</table>

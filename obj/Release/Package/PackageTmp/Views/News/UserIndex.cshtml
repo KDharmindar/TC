@@ -1,0 +1,63 @@
+﻿@*@model IEnumerable<tutioncloud.Models.News>*@
+@model PagedList.IPagedList<tutioncloud.Models.News>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+<h4> Latest Newsfeed </h4>
+<hr />
+<br />
+<br />
+<table class="table table-hover table-striped">
+    <tr>
+        <th>
+            @Html.ActionLink("Title", "UserIndex", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayName("Description")
+        </th>
+        <th>
+            @Html.DisplayName("Date")
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.User.Forename)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.User.Forename)
+        </td>*@
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.NewsID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.NewsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.NewsID })*@
+        </td>
+       
+    </tr>
+}
+
+</table>
+<br />
+<br />
+<br />
+
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("UserIndex",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

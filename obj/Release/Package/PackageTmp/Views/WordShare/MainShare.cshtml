@@ -1,0 +1,218 @@
+﻿@*@model IEnumerable<tutioncloud.Models.WordShare>*@
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+}
+<style type="text/css">
+        .box {
+            padding-left: 10px;
+            margin-left: 5px;
+        }
+    </style>
+
+
+@*<script type="text/javascript">
+    //for hide page load
+    $(document).ready(function () {
+       
+        $("#btnShow").on("click", function () {
+           
+            $("#show").toggle();
+        });
+    });
+</script>*@
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#BtnFav').click(function () {
+            var list = [];
+            $('#tblword input:checked').each(function () {
+                list.push(this.value);
+            });
+            // now names contains all of the names of checked checkboxes
+            // do something with it for excamle post with ajax
+            $.ajax({
+                url: '@Url.Action("Index","Wordutopia")',
+                type: 'POST',
+                data: { Parameters: list },
+                success: function (result) {
+                    alert("Successfully Added")
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+    //////////////////  for  add skiplist working  ////////////////
+    $(document).ready(function () {
+        $('#BtnSkip').click(function () {
+            var skiplist = [];
+            $('#tblword input:checked').each(function () {
+                skiplist.push(this.value);
+            });
+
+            $.ajax({
+                url: '@Url.Action("Index", "Wordutopia")',
+                type: 'POST',
+                data: { SkipParameters: skiplist },
+                success: function (result) {
+                    alert("Successfully Added")
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+
+    ////////////// to add test words /////////
+
+    $(document).ready(function () {
+        $('#BtnTest').click(function () {
+            var testlist = [];
+            $('#tblword input:checked').each(function () {
+                testlist.push(this.value);
+            });
+            // now names contains all of the names of checked checkboxes
+            // do something with it for excamle post with ajax
+            $.ajax({
+                url: '@Url.Action("Index","Wordutopia")',
+                type: 'POST',
+                data: { TestWordsParameters: testlist },
+                success: function (result) {
+                    alert("success")
+                    window.location.href = '/WTest/Answer';
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+    // for synonym
+    $(document).ready(function () {
+        $('#BtnData').click(function () {
+            var Wordlist = [];
+            $('#tblword input:checked').each(function () {
+                Wordlist.push(this.value);
+
+
+                //  window.location.href = "http://thesaurus.reference.com/browse/" + Word;
+            });
+            // now names contains all of the names of checked checkboxes
+            // do something with it for excamle post with ajax
+            $.ajax({
+                url: '@Url.Action("SaveDatabase","WordShare")',
+                type: 'POST',
+                data: {IDs:  Wordlist},
+                success: function (r) {
+                    alert("success")
+                    window.location.href = '/Wordutopia/Index';
+
+                },
+                error: function (r) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+
+</script>
+
+<br />
+<br />
+@*<h4>
+        @Html.ActionLink("Create New", "Create")
+    </h4>*@
+@*<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "WordShare", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Add Word
+        </a>
+    </h4>
+</div>*@
+
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "WordShare", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Create Word Share
+        </a>
+    </h4>
+</div>
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("ShareOnline", "Wordutopia", null)" target="_blank">
+            <img src="~/images/share.png" style="width: 50px; height: 50px "> Share Words Online
+        </a>
+    </h4>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<h4 style="text-align:center">
+    Wordutopia - Word Share List
+</h4>
+<hr />
+<br />
+@*<div class="col-md-6">
+    @using (Html.BeginForm("SharedWords", "WordShare", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Password:
+            <p>
+                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { id = "txtSearch" })
+                &nbsp;  <input type="submit" id="btnShow" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>*@
+<div class="col-md-6">
+    @using (Html.BeginForm("SharedWords", "WordShare", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Password:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" id="btnShow" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>
+<br />
+<div class="col-md-6">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li><a href="Home">Main Panel</a></li>
+            <li><a href="Home">Back</a></li>
+            <li><a href="Create">Create </a></li>
+            <li><a href="Edit">Edit</a></li>
+            <li><a href="Details">Details </a></li>
+            <li><a href="Delete">Delete </a></li>
+
+            <li><a href="#" id="BtnSyn">Synonym</a></li>
+            <li><a href="#" id="BtnFav">Add to Favourite</a></li>
+            <li><a href="#" id="BtnSkip">Skip</a></li>
+            <li><a href="#" id="BtnData">Add to my database</a></li>
+
+
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+@*<div id="show" style="height: 600px; overflow: scroll;">*@
+   

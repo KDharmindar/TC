@@ -1,0 +1,58 @@
+﻿@model tutioncloud.Models.QuestShare
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>QuestShare</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShareDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShareDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quester.Question)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quester.Question)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.QShareID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,58 @@
+﻿@model tutioncloud.Models.QuestTest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>QuestTest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Result)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Result)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TImeSkip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TImeSkip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestAppearance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestAppearance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QTest.QTNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QTest.QTNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quester.Question)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quester.Question)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.QuestTestID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,313 @@
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\tutioncloud.dll.config
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\tutioncloud.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\tutioncloud.pdb
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Antlr3.Runtime.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\CaptchaMvc.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\EntityFramework.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\EntityFramework.SqlServer.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.Google.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Web.Infrastructure.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Newtonsoft.Json.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Owin.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\PagedList.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\PagedList.Mvc.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.Helpers.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.Mvc.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.Optimization.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.Razor.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.WebPages.Deployment.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.WebPages.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.WebPages.Razor.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\WebGrease.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\CaptchaMvc.pdb
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\CaptchaMvc.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\PagedList.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\PagedList.Mvc.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.Helpers.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.Mvc.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.Optimization.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.Razor.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.WebPages.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.WebPages.Deployment.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\System.Web.WebPages.Razor.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Antlr3.Runtime.pdb
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Newtonsoft.Json.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\EntityFramework.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\EntityFramework.SqlServer.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.Google.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Work\VSProjects\tutioncloud\tutioncloud\obj\Debug\tutioncloud.dll
+E:\Work\VSProjects\tutioncloud\tutioncloud\obj\Debug\tutioncloud.pdb
+E:\Work\VSProjects\tutioncloud\tutioncloud\obj\Debug\tutioncloud.csprojResolveAssemblyReference.cache
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\tutioncloud.dll.config
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\tutioncloud.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\tutioncloud.pdb
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Antlr3.Runtime.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\CaptchaMvc.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\EntityFramework.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\EntityFramework.SqlServer.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.Google.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Web.Infrastructure.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Newtonsoft.Json.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Owin.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\PagedList.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\PagedList.Mvc.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.Helpers.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.Mvc.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.Optimization.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.Razor.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.WebPages.Deployment.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.WebPages.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.WebPages.Razor.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\WebGrease.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\CaptchaMvc.pdb
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\CaptchaMvc.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\PagedList.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\PagedList.Mvc.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.Helpers.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.Mvc.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.Optimization.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.Razor.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.WebPages.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.WebPages.Deployment.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\System.Web.WebPages.Razor.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Antlr3.Runtime.pdb
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Newtonsoft.Json.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\EntityFramework.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\EntityFramework.SqlServer.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.Google.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\obj\Debug\tutioncloud.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_20-3-17\tutioncloud\obj\Debug\tutioncloud.pdb
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\tutioncloud.dll.config
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\tutioncloud.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\tutioncloud.pdb
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Antlr3.Runtime.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\CaptchaMvc.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\EntityFramework.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\EntityFramework.SqlServer.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Google.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Web.Infrastructure.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Newtonsoft.Json.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Owin.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\PagedList.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\PagedList.Mvc.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.Helpers.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.Mvc.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.Optimization.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.Razor.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.WebPages.Deployment.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.WebPages.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.WebPages.Razor.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\WebGrease.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\CaptchaMvc.pdb
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\CaptchaMvc.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\PagedList.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\PagedList.Mvc.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.Helpers.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.Mvc.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.Optimization.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.Razor.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.WebPages.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.WebPages.Deployment.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\System.Web.WebPages.Razor.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Antlr3.Runtime.pdb
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Newtonsoft.Json.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\EntityFramework.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\EntityFramework.SqlServer.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Google.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\obj\Debug\tutioncloud.dll
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\obj\Debug\tutioncloud.pdb
+E:\Work\Projects\2- Tution Cloud\tutioncloud_26-7-17_hosted\tutioncloud\obj\Debug\tutioncloud.csprojResolveAssemblyReference.cache
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\tutioncloud.dll.config
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\tutioncloud.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\tutioncloud.pdb
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Antlr3.Runtime.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\CaptchaMvc.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\EntityFramework.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\EntityFramework.SqlServer.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Google.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Web.Infrastructure.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Newtonsoft.Json.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Owin.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\PagedList.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\PagedList.Mvc.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Helpers.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Mvc.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Optimization.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Razor.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.Deployment.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.Razor.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\WebGrease.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\CaptchaMvc.pdb
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\CaptchaMvc.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\PagedList.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\PagedList.Mvc.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Helpers.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Mvc.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Optimization.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Razor.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.Deployment.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.Razor.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Antlr3.Runtime.pdb
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Newtonsoft.Json.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\EntityFramework.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\EntityFramework.SqlServer.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Google.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.csprojResolveAssemblyReference.cache
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.dll
+D:\Ishan\Work\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.pdb
+C:\Ishan\Projects\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.csprojResolveAssemblyReference.cache
+C:\Ishan\Projects\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.csproj.CoreCompileInputs.cache
+C:\Ishan\Projects\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\Oz copy of TC source code 050917-20170913T123247Z-001\Oz copy of TC source code 050917\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.pdb
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\tutioncloud.dll.config
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\tutioncloud.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\tutioncloud.pdb
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Antlr3.Runtime.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\CaptchaMvc.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\EntityFramework.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\EntityFramework.SqlServer.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Google.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Web.Infrastructure.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Newtonsoft.Json.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Owin.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\PagedList.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\PagedList.Mvc.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Helpers.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Mvc.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Optimization.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Razor.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.Deployment.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.Razor.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\WebGrease.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\CaptchaMvc.pdb
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\CaptchaMvc.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\PagedList.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\PagedList.Mvc.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Helpers.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Mvc.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Optimization.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.Razor.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.Deployment.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\System.Web.WebPages.Razor.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Antlr3.Runtime.pdb
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Newtonsoft.Json.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\EntityFramework.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\EntityFramework.SqlServer.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Google.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.csprojResolveAssemblyReference.cache
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.csproj.CoreCompileInputs.cache
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.dll
+C:\Ishan\Projects\Stewart-TuitionCloud\oz_Copy\oz_Copy\tutioncloud_2-9-17_hosted\tutioncloud\obj\Debug\tutioncloud.pdb

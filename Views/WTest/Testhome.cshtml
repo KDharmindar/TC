@@ -1,0 +1,226 @@
+﻿@model tutioncloud.Models.WordTest
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+}
+
+<style>
+    .myclass {
+        color: white;
+        width: 400px;
+        height: 50px;
+        background-color: green;
+        text-align: center;
+        margin-left: 100px;
+    }
+
+    .myhint {
+        color: white;
+        width: 400px;
+        height: 50px;
+        background-color: white;
+        text-align: center;
+        margin-left: 100px;
+        display: none;
+    }
+</style>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+
+    //$(function(){
+    //    $("#btnPhrase").click(function (event) {
+    //        var d = $("#CpPhrase").val();
+    //        $("#OrPhrase").val(d);
+
+    //    });
+
+    //});
+    //$(function () {
+    //    $('#wodialog').dialog({
+    //        title: "Answer Verification",
+    //        autoOpen: false,
+    //        width: 500,
+    //        height: 400,
+    //        resizable: true,
+    //        modal: false
+    //    });
+
+    //    $('.wodetail').click(function () {
+    //        $('#wodialog').load(this.href, function () {
+    //            $(this).dialog('open');
+    //        });
+    //        return false;
+    //    });
+    //});
+
+    ///////////////// timer ///////////////
+    var dt = '@ViewBag.Rem_Time';
+    var dateAr = dt.split('-');
+    var newDate = dateAr[1] + '/' + dateAr[0] + '/' + dateAr[2];
+
+    var end = new Date(dateAr[1] + '/' + dateAr[0] + '/' + dateAr[2]);
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+            clearInterval(timer);
+            document.getElementById('timecountdown').innerHTML = 'Count Down Ends!';
+            //window.location.href = '/Word/TestQues';
+            var id = @Model.FWordID;
+            $.ajax({
+                url: '@Url.Action("Answer", "WTest", new { id = Model.FWordID })',
+                type: 'GET',
+                data: { id: @Model.FWordID },
+                success: function (result) {
+                    $('#wodialog').dialog({
+                                title: "Answer Verification",
+                                autoOpen: false,
+                                width: 500,
+                                height: 400,
+                                resizable: true,
+                                modal: false
+                    });
+                    var hrf='/WTest/Answer/'+id
+                    $("#wodialog").dialog({modal: true}).dialog('open').load(hrf);
+
+                    ///////////////// modal dialog window /////////////////
+                    //$(function () {
+                    //    $('#wodialog').dialog({
+                    //        title: "Answer Verification",
+                    //        autoOpen: false,
+                    //        width: 500,
+                    //        height: 400,
+                    //        resizable: true,
+                    //        modal: false
+                    //    });
+
+                    //    //$('.wodetail').click(function () {
+                    //    $('#wodialog').load(this.href, function () {
+                    //        $(this).dialog('open');
+                    //    });
+                    //    return false;
+                    //});
+                    //});
+
+                    //////////// end modal window
+                   // window.location.href = '/Word/Answer/'+id
+
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var _hours = Math.floor((distance % _day) / _hour);
+        var _minutes = Math.floor((distance % _hour) / _minute);
+        var _seconds = Math.floor((distance % _minute) / _second);
+
+        document.getElementById('timecountdown').innerHTML = ' Hrs: ' + _hours;
+        document.getElementById('timecountdown').innerHTML += ' Mins: ' + _minutes;
+        document.getElementById('timecountdown').innerHTML += ' Secs: ' + _seconds;
+    }
+    timer = setInterval(showRemaining, 1000);
+    ///////////////// ////////////////////////////
+    $(document).ready(function () {
+        $('#Btnhint').click(function () {
+            $('.hintshow').hide();
+        });
+
+        });
+</script>
+<h3 style="text-align:center">Create</h3>
+<br />
+
+<div class="col-sm-2">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li><a href="#">Main Panel</a></li>
+            <li><a href="#">Save</a></li>
+            <li><a href="#">Back</a></li>
+            <li><a href="#">Define</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="float-left" style=" margin-left:150px; color:orangered">
+    <h2 id="timecountdown"></h2>
+</div>
+@*<div class="col-sm-offset-1 col-sm-7">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()*@
+
+        @*@*<div class="form-horizontal">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <br /><br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Word, new { @class = "col-sm-offset-5 col-sm-2" })
+                @Html.HiddenFor(model => model.WordId, new { htmlAttributes = new { id = "idword", @class = "myclass" } })
+
+
+                <br />
+                <div class="col-sm-12">
+
+                    <br />
+                    <br />
+                    <div class="col-sm-8">
+                        @Html.EditorFor(model => model.Word, new { htmlAttributes = new { @class = "myclass", @readonly = "readonly" } })
+                        @Html.ValidationMessageFor(model => model.Word, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="hintshow" style="display:none">
+
+                @Html.LabelFor(model => model.Hint, htmlAttributes: new { @class = "myhint" })
+
+                @Html.EditorFor(model => model.Hint)
+                @Html.ValidationMessageFor(model => model.Hint, "", new { @class = "text-danger" })
+            </div>
+            <br /><br />
+            <div id="wodialog"></div>
+            @Html.ActionLink("Show More Options", "Answer", "Word", new { id=Model.WordId, @class = "wodetail" }  )
+            <div class="col-sm-2" style="margin-left:150px">
+                <a href="@Url.Action("TestQues", "Word",new { id = Model.WordId})" title="Next">
+                    Next <img alt="List View" src="@Url.Content("~/Content/images/myicons/next.png")">
+
+                    @*<input type="submit" value="Next Word" class="btn btn-primary" />*@
+                @*</a>
+            </div>*@
+            @*<div id="btnhint">
+                    <div class="form-group style=" width:100px">
+                        <div class=" col-sm-6">
+                            <input type="submit" value="Hint" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>*@
+            @*<div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+        </div>*@
+       
+    @*}
+</div>*@

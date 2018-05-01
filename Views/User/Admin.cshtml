@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+<br /><br />
+<h4>Administrator Page</h4>
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>
+            <a href="@Url.Action("Index", "User", null)" target="_blank">
+                <img src="~/images/User.png" style="vertical-align: middle; width: 60px; height: 60px "> User
+            </a>
+        </h3>
+
+        </div>
+    <div class="col-md-4">
+        <h3>
+            <a href="@Url.Action("Index", "News", null)" target="_blank">
+                <img src="~/images/News.png" style="vertical-align: middle;  width: 60px; height: 60px "> News
+            </a>
+        </h3>
+
+       </div>
+    <div class="col-md-4">
+        <h3>
+            <a href="@Url.Action("Index", "Contact", null)" target="_blank">
+                <img src="~/images/Contact.png" style="vertical-align: middle;  width: 60px; height: 60px "> Contact
+            </a>
+        </h3>
+
+      
+    </div>
+</div>

@@ -1,0 +1,136 @@
+﻿@model IEnumerable<tutioncloud.Models.QuestTest>
+@*<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>*@
+
+@{
+    ViewBag.Title = "Result";
+    Layout = "../Shared/_Layout_Quester_Admin.cshtml";
+
+}
+@*<script type="text/javascript">
+
+        function showPopup() {
+            $("#divPopup").dialog({
+                height: 600,
+                width: 500,
+                modal: true,
+                button: {
+                    "OK": function () {
+                        $(this).dialog("close");
+                        alert('You selected OK !!')
+                    },
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        }
+    </script>*@
+
+<style type="text/css">
+    .pass {
+        color: green;
+    }
+
+    .fail {
+        color: red;
+    }
+</style>
+<br />
+<br />
+<h4>Quester - Result Test</h4>
+
+<br />
+<br />
+
+@*<input type="button" onclick="showPopup()" value="click to show popup" />
+    <div class="table-responsive" id="divPopup" style="display:none">*@
+@*<p>
+        @Html.ActionLink("Start Test", "Answer")
+    </p>*@
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayName("Word")
+        </th>
+        <th>
+            @Html.DisplayName("Result")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quester.Question)
+            </td>
+            <td>
+                @if (item.Result == true)
+                {
+
+                    <img src="~/images/tick1.png">
+                }
+                else
+                {
+                    <img src="~/images/cros.png" width="30" height="30">
+                }
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Result)
+                </td>*@
+        </tr>
+    }
+
+</table>
+<br />
+<br />
+<div>
+    @if (ViewBag.Status == "Fail")
+    {
+        <div class="fail">
+            <div class="col-md-6">
+                <p style="font-weight:bold">
+                    Result in Percentage : @ViewBag.percentage     %
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p style="font-weight:bold">
+
+                    You are Fail. Please try again.
+                </p>
+            </div>
+        </div>
+    }
+    else if (ViewBag.Status == "Pass")
+    {
+        <div class="pass">
+
+            <div class="col-md-6">
+                <p style="font-weight:bold">
+
+                    Result in Percentage : @ViewBag.percentage     %
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p style="font-weight:bold">
+
+                    Congratulations! You have successfully passed the exam.
+                </p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-6">
+            <p style="font-weight:bold; color: red;">
+
+                No Words Select, Please select Words for Test!
+            </p>
+        </div>
+    }
+    <br />
+    <br />
+</div>

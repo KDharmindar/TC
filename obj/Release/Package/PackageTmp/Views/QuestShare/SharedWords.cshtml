@@ -1,0 +1,234 @@
+﻿@model IEnumerable<tutioncloud.Models.QuestShare>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "../Shared/_Layout_Quester_Admin.cshtml";
+}
+
+
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "QuestShare", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Create Word Share
+        </a>
+    </h4>
+</div>
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("ShareOnline", "Quester", null)" target="_blank">
+            <img src="~/images/share.png" style="width: 50px; height: 50px "> Share Words Online
+        </a>
+    </h4>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<h4 style="text-align:center">
+    Quester - Word Share List
+</h4>
+<hr />
+<br />
+@*<div class="col-md-6">
+        @using (Html.BeginForm("SharedWords", "WordShare", FormMethod.Get))
+        {
+            <div class="form-group">
+                Search By Password:
+                <p>
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { id = "txtSearch" })
+                    &nbsp;  <input type="submit" id="btnShow" value="Search" class="btn btn-primary" />
+                </p>
+            </div>
+
+        }
+    </div>*@
+<div class="col-md-6">
+    @using (Html.BeginForm("SharedWords", "QuestShare", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Password:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" id="btnShow" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>
+<br />
+<div class="col-md-6">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li><a href="Home">Main Panel</a></li>
+            <li><a href="Home">Back</a></li>
+            <li><a href="Create">Create </a></li>
+            <li><a href="Edit">Edit</a></li>
+            <li><a href="Details">Details </a></li>
+            <li><a href="Delete">Delete </a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+@*<div id="show" style="height: 600px; overflow: scroll;">*@
+<div style="height: 600px; overflow: scroll;">
+
+    <div id="tblword">
+
+        <table class="table table-hover table-striped">
+            <tr>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Pronounciation)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Phrase)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Hint)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Definition)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Synonym)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsShareOnline)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsFavourite)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsSkip)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WAppreance)
+                    </th>*@
+
+                @*<th>
+                        @Html.DisplayNameFor(model => model.AdditionInfo)
+                    </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.User.Forename)
+                        </th>*@
+
+                <th>  @Html.ActionLink("Words", "SharedWords", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }) </th>
+
+              
+                <th>   @Html.ActionLink(" Password ", "SharedWords", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }) </th>
+                <th>
+                    @Html.DisplayName("Shared Date")
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quester.Question)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShareDate)
+                    </td>
+                   
+
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Pronounciation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phrase)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Hint)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Definition)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Synonym)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsShareOnline)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsFavourite)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsSkip)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Appearance)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WAppreance)
+                        </td>*@
+
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.AdditionInfo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.Forename)
+                        </td>*@
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.QShareID }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.QShareID }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.QShareID })
+                    </td>
+
+                </tr>
+
+            }
+
+        </table>
+
+    </div>
+
+</div>
+
+
+
+
+
+<br />
+<br />
+<br />
+
+@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("SharedWords",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
+
+
+@*@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+
+            $("#tblword").hide();
+
+            $("#btnShow").click(function (e) {
+               e.preventDefault();
+                $("#tblword").show();
+            });
+        })
+    </script>
+    }*@

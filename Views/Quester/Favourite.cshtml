@@ -1,0 +1,99 @@
+﻿@model PagedList.IPagedList<tutioncloud.Models.Quester>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@*@model IEnumerable<tutioncloud.Models.Wordutopia>*@
+
+@{
+    ViewBag.Title = "Show Favourite";
+    Layout = "../Shared/_Layout_Quester_Admin.cshtml";
+}
+<br />
+<br />
+@*<h4>
+        @Html.ActionLink("Create New", "Create")
+    </h4>*@
+
+
+<h4>Quester - Favourties</h4>
+<br />
+
+<br />
+<div class="col-md-6">
+
+    @using (Html.BeginForm("Favourite", "Quester", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Word Name:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>
+<br />
+<div class="col-md-6">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li><a href="Home">Main Panel</a></li>
+            <li><a href="Index">Back</a></li>
+            <li><a href="Index">Questions</a></li>
+            <li><a href="Create">Add Question</a></li>
+            <li><a href="Favourite">Add to Favourite</a></li>
+            <li><a href="SkipList">Skipped List</a></li>
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+<br />
+<div style="height: 600px; overflow: scroll;">
+
+        <br />
+        <table class="table table-hover table-striped">
+
+            <tr>
+
+                <th>
+                    @Html.ActionLink("Questions", "Favourite", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.ActionLink(" Category ", "Favourite", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Question)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.QuesterID }) |
+                            @*@Html.ActionLink("Details", "Details", new { id = item.QuesterID }) |*@
+                            @Html.ActionLink("Delete", "Delete", new { id = item.QuesterID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+        <br />
+        @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@

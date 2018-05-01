@@ -1,0 +1,178 @@
+﻿@model IList<tutioncloud.Models.Wordutopia>
+
+@{
+    ViewBag.Title = "ReviewWords";
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+
+}
+
+<br />
+<br />
+<h4>Wordutopia - Review Words</h4>
+<hr />
+<div class="col-md-6">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li><a href="Home">Main Panel</a></li>
+            <li><a href="Home">Back</a></li>
+            <li><a href="Index">Show All Words </a></li>
+            <li><a href="ReviewWords">Review Words</a></li>
+            <li><a href="ReverseTest">Reverse Test </a></li>
+
+        </ul>
+    </div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Add / Remove Table Rows Dynamically</title>
+    <style type="text/css">
+        form {
+            margin: 20px 0;
+        }
+
+            form input, button {
+                padding: 5px;
+            }
+
+        table {
+            width: 52%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #cdcdcd;
+        }
+
+            table th {
+                padding: 10px;
+                text-align: left;
+                color: #149C82;
+                font-size:16px;
+            }
+            table td{
+                  padding: 10px;
+                text-align: left;
+            }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#show").hide();
+
+            $("#add-row").click(function () {
+                var name = $("#name").val();
+                //var email = $("#email").val();
+                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td></tr>";
+                $("table tbody").append(markup);
+            });
+
+            // Find and remove selected table rows
+            $(".delete-row").click(function () {
+                $("table tbody").find('input[name="record"]').each(function () {
+                    if ($(this).is(":checked")) {
+                        $(this).parents("tr").remove();
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+          
+            $("#btnShow").on("click", function () {
+                $("#show").show();
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+   
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    
+    <p>Recall your words</p>
+    <input type="text" id="name" class="form-control col-md-3" placeholder="Type the first word you recall here!">
+       &nbsp; <input type="button" id="add-row" class="btn btn-success" value="Submit">
+    <button type="button" class="delete-row btn btn-danger">Delete Row</button>
+
+
+
+    <br />
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Word Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @*<tr>
+                @*<td><input type="checkbox" name="record"></td>
+                <td>Peter Parker</td>
+            </tr>*@
+        </tbody>
+    </table>
+
+
+
+
+</body>
+</html>
+
+<br />
+
+<input type="button" id="btnShow" class="btn btn-primary" value="Show Random Tested Words">
+
+<br />
+
+<div id="show">
+    <div style="height: 600px; overflow: scroll;">
+        <br />
+        <br />
+
+<div class="row">
+    <div class="col-md-8">
+        <h4>
+            @Html.ActionLink("Words", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            @*@Html.DisplayName("Hint")*@
+        </h4>
+    </div>
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-8">
+
+                        @Html.DisplayFor(modelItem => item.Word)
+                    <span style="display:inline-block; width:10px"></span>
+                        @*@Html.DisplayFor(modelItem => item.Hint)*@
+                    </div>
+                <div class="col-md-4">
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.WordID }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.WordID }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.WordID })
+
+
+        </div>
+        }
+
+        </div>
+        </div>
+</div>
+

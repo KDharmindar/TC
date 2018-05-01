@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+}
+<div class="col-md-6">
+    @using (Html.BeginForm("ShowWords", "WordShare", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Password:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>

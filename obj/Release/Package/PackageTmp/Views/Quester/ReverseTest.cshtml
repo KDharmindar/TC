@@ -1,0 +1,172 @@
+﻿@model tutioncloud.Models.Quester
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "../Shared/_Layout_Quester_Admin.cshtml";
+
+}
+
+<br />
+<br />
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Quester - Reverse Test</h4>
+        <hr />
+        <br />
+        <br />
+
+        <div class="col-md-offset-3 col-md-6">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Tasks Dropdown List
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- Add header here -->
+                    <li><a href="Home">Main Panel</a></li>
+                    <li><a href="Home">Back</a></li>
+                    <li><a href="Index">Show All Words </a></li>
+                    <li><a href="Favourite">Favourites List</a></li>
+                    <li><a href="SkipList">Skip List</a></li>
+                    <li><a href="ReverseTest">Reverse Test </a></li>
+
+                </ul>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.FWUserID, "FWUserID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("FWUserID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FWUserID, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+        @Html.LabelFor(model => model.Answer, htmlAttributes: new { @class = "control-label col-md-offset-2 col-md-2" })
+
+<br />
+<br />
+        <div class="form-group">
+            <div class="col-md-2">
+                <a href="@Url.Action("prevR", "Quester", new { id = Model.QuesterID })" title="Previous">
+                    <img alt="List View" src="@Url.Content("~/images/prev.png")">
+                    Previous
+                </a>
+            </div>
+
+
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Answer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Answer, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                <a href="@Url.Action("nextR", "Quester", new { id = Model.QuesterID })" title="Next">
+                    Next  <img alt="List View" src="@Url.Content("~/images/next.png")">
+                  
+
+                </a>
+            </div>
+        </div>
+
+   
+
+        <div class="form-group">
+            <div class="col-md-2" id="btnHint">
+                <img src="~/images/hint.png" alt="List View" width="35" height="35">
+                &nbsp;&nbsp;&nbsp; Hint
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Hint, new { htmlAttributes = new { @class = "form-control", @id = "txtHint" } })
+                @Html.ValidationMessageFor(model => model.Hint, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2" id="btnPhrase">
+                <img src="~/images/phrase2.png" alt="List View" width="40" height="40">
+                &nbsp;&nbsp;&nbsp; Additional Info
+            </div>
+            @*@Html.LabelFor(model => model.AdditionalInfo, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdditionalInfo, new { htmlAttributes = new { @class = "form-control", @id = "txtPhrase" } })
+                @Html.ValidationMessageFor(model => model.AdditionalInfo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-2" id="btnWord">
+                <img src="~/images/word.png" alt="List View" width="40" height="40">
+                &nbsp;&nbsp;&nbsp; Question
+            </div>            <div class="col-md-10">
+                @Html.EditorFor(model => model.Question, new { htmlAttributes = new { @class = "form-control", @id = "txtWord" } })
+                @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<br />
+        <br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>*@
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+    $(document).ready(function () {
+        var hintText = $("#txtWord").val();
+        console.log(hintText);
+        $("#txtWord").val("");
+        $("#btnWord").click(function () {
+            $("#txtWord").val(hintText);
+        });
+
+    })
+    </script>
+
+    <script>
+    $(document).ready(function () {
+        var hintText = $("#txtPhrase").val();
+        console.log(hintText);
+        $("#txtPhrase").val("");
+        $("#btnPhrase").click(function () {
+            $("#txtPhrase").val(hintText);
+        });
+
+    })
+    </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            var hintText = $("#txtHint").val();
+            console.log(hintText);
+            $("#txtHint").val("");
+            $("#btnHint").click(function () {
+                $("#txtHint").val(hintText);
+            });
+
+        })
+    </script>
+
+}

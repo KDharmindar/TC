@@ -1,0 +1,217 @@
+﻿@model PagedList.IPagedList<tutioncloud.Models.Wordutopia>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+}
+<style type="text/css">
+    .col {
+        padding: 10px;
+        margin-right:10px;
+    }
+</style>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#BtnFav').click(function () {
+            var list = [];
+            $('#tblword input:checked').each(function () {
+                list.push(this.value);
+            });
+            // now names contains all of the names of checked checkboxes
+            // do something with it for excamle post with ajax
+            $.ajax({
+                url: '@Url.Action("Index","Wordutopia")',
+                type: 'POST',
+                data: { Parameters: list },
+                success: function (result) {
+                    console.log(result);
+                    alert("Successfully Added")
+                },
+                error: function (result) {
+                    console.log(result);
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+    //////////////////  for  add skiplist working  ////////////////
+    $(document).ready(function () {
+        $('#BtnSkip').click(function () {
+            var skiplist = [];
+            $('#tblword input:checked').each(function () {
+                skiplist.push(this.value);
+            });
+
+            $.ajax({
+                url: '@Url.Action("Index", "Wordutopia")',
+                type: 'POST',
+                data: { SkipParameters: skiplist },
+                success: function (result) {
+                    alert("Successfully Added")
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+
+    ////////////// to add test words /////////
+
+    $(document).ready(function () {
+        $('#BtnTest').click(function () {
+            var testlist = [];
+            $('#tblword input:checked').each(function () {
+                testlist.push(this.value);
+            });
+            // now names contains all of the names of checked checkboxes
+            // do something with it for excamle post with ajax
+            $.ajax({
+                url: '@Url.Action("Index","Wordutopia")',
+                type: 'POST',
+                data: { TestWordsParameters: testlist },
+                success: function (result) {
+                    alert("success")
+                    window.location.href = '/Wordutopia/WTest/Answer';
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+    // for synonym
+    $(document).ready(function () {
+        $('#BtnSyn').click(function () {
+            var Wordlist = [];
+            $('#tblword input:checked').each(function () {
+                Wordlist.push(this.value);
+              
+                
+              //  window.location.href = "http://thesaurus.reference.com/browse/" + Word;
+            });
+            // now names contains all of the names of checked checkboxes
+            // do something with it for excamle post with ajax
+            $.ajax({
+                url: '@Url.Action("Index","Wordutopia")',
+                type: 'POST',
+                data: {IDs:  Wordlist},
+                success: function (result) {
+                  //  alert("success")
+                    window.open(result.url, "_blank");
+                    
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+
+</script>
+
+<br />
+<br />
+@*<h4>
+    @Html.ActionLink("Create New", "Create")
+</h4>*@
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "Wordutopia", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Add Word
+        </a>
+    </h4>
+    </div>
+
+<br />
+<br />
+    <h4>Words List</h4>
+<br />  
+<div class="col-md-6"> 
+   @using (Html.BeginForm("Index", "Wordutopia", FormMethod.Get))
+   {
+    <div class="form-group">
+        Search By Word Name:
+        <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+              &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+</p>
+        </div>
+       
+        }
+    </div>
+<br />
+<div class="col-md-6">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li><a href="Home">Main Panel</a></li>
+            <li><a href="Home">Back</a></li>
+            <li><a href="Create">Create </a></li>
+            <li><a href="javascript:void(0)" id="BtnSyn">Select to Synonym</a></li>
+            <li><a href="javascript:void(0)" id="BtnFav">Add to Favourites</a></li>
+            <li><a href="javascript:void(0)" id="BtnSkip">Add to Skip List</a></li>
+            <li><a href="javascript:void(0)" id="BtnTest">Selected Test Words</a></li>
+         
+
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+<br />
+<div style="height: 600px; overflow: scroll;">
+
+    <div id="tblword">
+        <br />
+        <table class="table table-hover table-striped">
+
+            <tr>
+                <th>
+                    @Html.DisplayName("Select")
+                </th>
+                <th>
+                    @Html.ActionLink("Words", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th></th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="selected" value=@item.WordID />
+                    </td>
+                    <td>
+
+                        @Html.DisplayFor(modelItem => item.Word)
+                    </td>
+                    <td>
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.WordID }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.WordID }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.WordID })
+                    </td>
+                </tr>
+
+            }
+
+
+        </table>
+    </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@

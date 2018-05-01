@@ -1,0 +1,35 @@
+﻿@model tutioncloud.Models.News
+
+@{
+    ViewBag.Title = "Edit";
+}
+<br />
+<br />
+<h4> News - Edit</h4>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.Partial("_Partial")
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript" src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+<script type="text/javascript">
+        tinymce.init({
+            selector: 'textarea',
+            width: 500,
+            toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+            menubar: false,
+            statusbar: false
+        });
+</script>
+}

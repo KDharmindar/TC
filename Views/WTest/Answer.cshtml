@@ -1,0 +1,234 @@
+﻿@*@model tutioncloud.Models.Wordutopia*@
+@*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">*@
+@*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+@Scripts.Render("~/bundles/jquery")*@
+
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.12.4.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+@{
+    ViewBag.Title = "Answer";
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+
+}
+
+<script>
+    var dt = '@ViewBag.EndDate';
+    var dateAr = dt.split('-');
+    var newDate = dateAr[1] + '/' + dateAr[0] + '/' + dateAr[2];
+
+    var end = new Date(dateAr[1] + '/' + dateAr[0] + '/' + dateAr[2]);
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = 'Ready for next word!';
+            window.location.href = '/WTest/Answer';
+
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        //document.getElementById('countdown').innerHTML = days + 'days ';
+        document.getElementById('countdown').innerHTML = hours + 'hrs ';
+        document.getElementById('countdown').innerHTML += minutes + 'mins ';
+        document.getElementById('countdown').innerHTML += seconds + 'secs';
+    }
+
+    timer = setInterval(showRemaining, 1000);
+</script>
+<script type="text/javascript">
+
+        function showDefinition() {
+            $("#divDefinition").dialog({
+                height: 300,
+                width: 300,
+                modal: true,
+                title: "Choose Answer",
+                button: {
+                    "OK": function () {
+                        $(this).dialog("close");
+                        alert('You selected OK !!')
+                    },
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        }
+    </script>
+
+<script type="text/javascript">
+
+    function showHint() {
+        $("#divHint").dialog({
+            height: 200,
+            width: 200,
+            modal: true,
+            title: "Show Hint",
+            button: {
+                "OK": function () {
+                    $(this).dialog("close");
+                    alert('You selected OK !!')
+                },
+                "Cancel": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+    }
+</script>
+
+
+
+ 
+
+  
+
+
+        <br />
+        <br />
+        <h4 style="text-align:center">Wordutopia - Start Test </h4>
+        <hr />
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.FWUserID, "FWUserID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("FWUserID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.FWUserID, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <br />
+
+        <h4 style="text-align:center">Your Selected Word For Test </h4>
+
+        @*<div class="form-group">
+            <div class="col-md-2">
+                <a href="@Url.Action("prev", "Wordutopia",new { id = Model.WordID})" title="Previous">
+                    <img alt="List View" src="@Url.Content("~/images/prev.png")">
+                    Previous
+                </a>
+            </div>*@
+
+
+        @*<div class="col-md-2">
+                <a href="@Url.Action("next", "Wordutopia",new { id = Model.WordID})" title="Next">
+                    Next  <img alt="List View" src="@Url.Content("~/images/next.png")">
+
+
+                </a>
+            </div>*@
+        <br />
+       
+        <div class="form-group">
+            <div class="col-md-10">
+                <p style="text-align:center; color:red; font-size:24px; margin-left:135px;"> @ViewBag.Word</p>
+                <br />
+                <div class="col-md-offset-4 col-md-3">
+                    <img src="~/images/next.png" width="48" height="48" onclick="showDefinition()" value="Show Next Word" /> &nbsp;&nbsp; Score and Word Next
+
+                </div>
+                <div class="table-responsive" id="divDefinition" style="display:none">
+
+                    <p style="text-align:center; color:red;">  Was the answer you had in mind correct? Please confirm </p>
+                    <br />
+
+                    <p style="color:blueviolet; text-align:center; font-size:18px  "> @ViewBag.Definition </p>
+                    <br />
+
+                    <div id="YES" class="col-md-offset-2 col-md-1">
+                        <a href='@Url.Action("Answer", "WTest", new { id = 1 })'>
+                            <img src='@Url.Content("~/images/yes1.jpeg")' />
+                        </a>
+                    </div>
+                    <div id="NO" class="col-md-offset-3 col-md-1">
+                        <a href='@Url.Action("Answer", "WTest", new { id = 0 })'>
+                            <img src='@Url.Content("~/images/no1.jpeg")' />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-offset-1 col-md-3">
+
+                    <img src="~/images/hint.png" width="48" height="48" onclick="showHint()" value="Hint" /> &nbsp;&nbsp; Hint
+                </div>
+
+                <div class="table-responsive" id="divHint" style="display:none">
+                    <p style="text-align:center; color:blueviolet; font-size:18px"> @ViewBag.Hint </p>
+                </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                @*<p style="font-size:14px; text-align:center; width:55%; border:1px solid red; border-radius:5px; padding: 10px;">
+                    **This test feature has been designed so that you can check your answer <br />
+                    before proceeding. 
+                    The countdown has also been suspended for the moment, <br />
+                    and will continue exactly where you left off once you confirm your result
+
+                </p>*@
+                <div class="alert alert-success col-md-offset-4 col-md-6" role="alert">
+                    **This test feature has been designed so that you can check your answer
+                    before proceeding.
+                    The countdown has also been suspended for the moment,
+                    and will continue exactly where you left off once you confirm your result
+                </div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            
+                @if (ViewBag.Status == "complete")
+                {
+                    <p style="font-size:18px; margin-left:125px; color: green; ">
+                        Test Complete!! you are directed to TEST SUMMARY PAGE 
+                         
+                    </p>
+    <br />
+    <div>
+        @Html.ActionLink("Test Summary Page", "Index")
+    </div>
+<br />
+<br />
+                }
+                <br />
+                <br />
+                <p style="text-align:center; font-size:18px; margin-left:125px;">
+                    Time Remaining </p>
+                    <div style=" margin:auto; margin-left:125px; color:orangered">
+                        <h3 id="countdown" style="text-align: center;"></h3>
+                    </div>
+
+</div>
+        </div>
+        </div>
+    
+           }
+
+            
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+

@@ -1,0 +1,133 @@
+﻿@model tutioncloud.Models.Quester
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "../Shared/_Layout_Quester_Admin.cshtml";
+
+}
+
+
+<div>
+    <br />
+    <br />
+    <h4>Question - Details</h4>    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Question)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Question)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Answer)
+        </dd>
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInfo)
+        </dd>
+        <dt>
+            @Html.DisplayName("Category")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Synonym)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Synonym)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsShareOnline)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsShareOnline)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsFavourite)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsFavourite)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IsSkip)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsSkip)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Appearance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Appearance)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.WAppreance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.WAppreance)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Score)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Score)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AdditionInfo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AdditionInfo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Forename)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.User.Forename)
+            </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.QuesterID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

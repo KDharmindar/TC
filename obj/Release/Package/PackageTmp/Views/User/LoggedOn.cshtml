@@ -1,0 +1,11 @@
+﻿
+@model tutioncloud.Models.User
+@{
+    ViewBag.Title = "LoggedOn";
+}
+
+<h2>Login</h2>
+@if (Session["UserID"] != null)
+{
+    <h4>Hello @Session["UserName"].ToString()</h4>
+}

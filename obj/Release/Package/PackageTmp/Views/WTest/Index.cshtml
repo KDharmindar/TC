@@ -1,0 +1,142 @@
+﻿@model PagedList.IPagedList<tutioncloud.Models.WTest>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@*@model IEnumerable<tutioncloud.Models.WTest>*@
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+
+}
+
+@*<script type="text/javascript">
+
+        function showPopup() {
+            $("#divPopup").dialog({
+                height: 600,
+                width: 500,
+                modal: true,
+              
+                button: {
+                    "OK": function () {
+                        $(this).dialog("close");
+                        alert('You selected OK !!')
+                    },
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        }
+    </script>*@
+<br />
+<br />
+
+
+    @*<h4>
+            @Html.ActionLink("Create New", "Create")
+        </h4>*@
+    <div class="col-md-4">
+        <h4>
+            <a href="@Url.Action("Create", "WTest", null)" target="_blank">
+                <img src="~/images/Create.png" style="width: 50px; height: 50px "> Create Test
+            </a>
+        </h4>
+    </div>
+
+    <br />
+    <br />
+    <h4> Wordutopia - Test Summary 
+    </h4>
+<hr />
+    <br />
+    <div class="col-md-6">
+        @using (Html.BeginForm("Index", "WTest", FormMethod.Get))
+        {
+            <div class="form-group">
+                Search By Word Name:
+                <p>
+                    @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                    &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+                </p>
+            </div>
+
+        }
+    </div>
+    <br />
+    <div class="col-md-6">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                Tasks Dropdown List
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <!-- Add header here -->
+                <li><a href="Index">Main Panel</a></li>
+                <li><a href="Create">Create </a></li>
+                <li><a href="Result">Result </a></li>
+                <li><a href="Details">Details </a></li>
+                <li><a href="Delete">Delete </a></li>
+             
+
+
+            </ul>
+        </div>
+    </div>
+<div class="clearfix"></div>
+<br />
+<br />
+
+<div style="height: 600px; overflow: scroll;">
+
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>
+                @Html.ActionLink(" Test Title ", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+
+            <th>
+                @Html.ActionLink(" Minutes / Seconds", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TNote)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)    @*alternate to minutes*@
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Result", "Result", new { id = item.WTestID }) |
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.WTestID }) |*@
+                    @*@Html.ActionLink("Details", "Details", new { id = item.WTestID }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.WTestID })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+
+    <br />
+    <br />
+    <br />
+
+    @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@

@@ -1,0 +1,120 @@
+﻿@model IEnumerable<tutioncloud.Models.WordShare>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+
+}
+<br />
+<br />
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "WordShare", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Create Word Share
+        </a>
+    </h4>
+</div>
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("ShareOnline", "Wordutopia", null)" target="_blank">
+            <img src="~/images/share.png" style="width: 50px; height: 50px "> Share Words Online
+        </a>
+    </h4>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<h4 style="text-align:center">
+    Wordutopia - Word Share List
+</h4>
+<hr />
+<br />
+<div class="col-md-6">
+    @using (Html.BeginForm("Index", "WordShare", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Word Name:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>
+<br />
+<div class="col-md-6">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li><a href="Home">Main Panel</a></li>
+            <li><a href="Home">Back</a></li>
+            <li><a href="Create">Create </a></li>
+            <li><a href="Edit">Edit</a></li>
+            <li><a href="Details">Details </a></li>
+            <li><a href="Delete">Delete </a></li>
+            <li><a href="#" id="BtnFav">Add to Favourite</a></li>
+            <li><a href="#" id="BtnSkip">Skip</a></li>
+            <li><a href="#" id="BtnTest">Create Test</a></li>
+
+
+        </ul>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserTo)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.UserFrom)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShareDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wordutopia.Word)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Wordutopia.User.Username)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.UserFrom)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShareDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Wordutopia.Word)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WShareID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WShareID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WShareID })
+        </td>
+    </tr>
+}
+
+</table>

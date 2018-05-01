@@ -1,0 +1,56 @@
+﻿@model tutioncloud.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    var website = ViewBag.webname;
+    if (website == "Wordutopia")
+    {
+        Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+    }
+    else if (website == "Quester")
+    {
+        Layout = "../Shared/_Layout_Quester_Admin.cshtml";
+    }
+    else if (website == "Choicer")
+    {
+        Layout = "../Shared/_Layout_Choicer_Admin.cshtml";
+    }
+}
+
+
+<div>
+    <br />
+    <br />
+    <h4> Category - Detail</h4>
+        <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Forename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Forename)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

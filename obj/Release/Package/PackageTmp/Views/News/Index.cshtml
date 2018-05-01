@@ -1,0 +1,88 @@
+﻿@*@model IEnumerable<tutioncloud.Models.News>*@
+@model PagedList.IPagedList<tutioncloud.Models.News>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "News", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Add News
+        </a>
+    </h4>
+</div>
+
+<br />
+<br />
+<h4>News List</h4>
+<br />
+<div class="col-md-6">
+    @using (Html.BeginForm("Index", "News", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Title:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+    <br />
+    <br />
+</div>
+
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>
+            @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayName("Description")
+        </th>
+        <th>
+            @Html.DisplayName("Date")
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.User.Forename)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.User.Forename)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NewsID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NewsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NewsID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<br />
+<br />
+<br />
+
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

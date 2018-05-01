@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*adding for favourite and skip ajax*@
+    @Scripts.Render("~/bundles/jquery")
+  
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("Wordutopia", "Home_Wordutopia", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Home", "Wordutopia")</li>
+                    <li>@Html.ActionLink("Words", "Index", "Wordutopia")</li>
+                    <li>@Html.ActionLink("Notes", "Index", "Note")</li>
+                    <li>@Html.ActionLink("Favourites", "Favourite", "Wordutopia")</li>
+                    <li>@Html.ActionLink("Skip List", "SkipList", "Wordutopia")</li>
+                    <li>@Html.ActionLink("Reverse Test", "ReverseTest", "Wordutopia")</li>
+                    @*<li>@Html.ActionLink("Review Words", "ReviewWords", "Wordutopia")</li>*@
+                    <li>@Html.ActionLink("Exams", "Index", "WTest")</li>
+                    <li>@Html.ActionLink("Sharing", "MainShare", "WordShare")</li>
+                    @*<li>@Html.ActionLink("Test Summary", "Index", "Wordutopia")</li>*@
+                    @*<li>@Html.ActionLink("Share Online", "ShareOnline", "Wordutopia")</li>*@
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                   <li>@Html.ActionLink(@Session["UserName"] + "!", "Manage", "User")</li>
+                    <li>@Html.ActionLink("Log Off", "Login", "User")</li>
+
+                    @*@Session["UserName"]*@
+                    </ul>
+                        @*@Html.Partial("_LoginPartial")*@
+</div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <div class="col-md-offset-3">
+            <ul class="nav navbar-nav">
+                <li><a href="https://en.wikipedia.org/wiki/Main.page" target="_blank">Wikipedia</a></li>
+                <li><a href="http://www.xnumber.com/xnumber/windows_calc.htm" target="_blank">Calculator</a></li>
+                <li><a href="https://www.google.com/maps/" target="_blank">Maps</a></li>
+                <li><a href="http://www.xe.com/currencyconverter/" target="_blank">Currency Converter</a></li>
+                <li><a href="https://www.timeanddate.com/worldclock/full.html" target="_blank">World Clocks</a></li>
+                <li><a href="http://www.free-translator.com/" target="_blank">Translator</a></li>
+
+            </ul>
+        </div>
+       <br />
+        <br />
+        <br />
+        <br />
+        <footer style="text-align: center;">
+
+            <p>
+
+                &copy; @DateTime.Now.Year - Stewart Gemmill, All rights reserved
+            </p>
+            @*<i align="right"> A new, dynamic and fast way to learn!</i></p>*@
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

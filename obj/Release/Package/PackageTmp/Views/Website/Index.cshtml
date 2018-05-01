@@ -1,0 +1,33 @@
+﻿@model IEnumerable<tutioncloud.Models.Website>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WebName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WebID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WebID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WebID })
+        </td>
+    </tr>
+}
+
+</table>

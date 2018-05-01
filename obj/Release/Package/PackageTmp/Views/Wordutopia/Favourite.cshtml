@@ -1,0 +1,103 @@
+﻿@model PagedList.IPagedList<tutioncloud.Models.Wordutopia>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@*@model IEnumerable<tutioncloud.Models.Wordutopia>*@
+
+@{
+    ViewBag.Title = "Show Favourite";
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+}
+<br />
+<br />
+@*<h4>
+        @Html.ActionLink("Create New", "Create")
+    </h4>*@
+
+
+<h4>Wordutopia - Favourties List</h4>
+<br />
+
+<br />
+<div class="col-md-6">
+
+    @using (Html.BeginForm("Favourite", "Wordutopia", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Word Name:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>
+<br />
+<div class="col-md-6">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li><a href="Home">Main Panel</a></li>
+            <li><a href="Index">Back</a></li>
+            <li><a href="Index">Questions</a></li>
+            <li><a href="Create">Add Question</a></li>
+            <li><a href="Favourite">Add to Favourite</a></li>
+            <li><a href="SkipList">Skipped List</a></li>
+            <li><a href="ShareOnline">Share Words Online</a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+<br />
+<div style="height: 600px; overflow: scroll;">
+
+    <table class="table table-hover table-striped">
+
+        <tr>
+            <th>
+                @Html.ActionLink("Words", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.DisplayName("Hint")
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Word)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hint)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.WordID }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.WordID }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.WordID })
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+    </div>
+
+
+    <br />
+<br />
+<br />
+    @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Favourite",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@

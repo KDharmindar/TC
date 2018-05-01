@@ -1,0 +1,84 @@
+﻿@*@model IEnumerable<tutioncloud.Models.Contact>*@
+@model PagedList.IPagedList<tutioncloud.Models.Contact>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "Contact", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Add Contact
+        </a>
+    </h4>
+</div>
+
+<br />
+<br />
+<h4>Contact List</h4>
+<br />
+<div class="col-md-6">
+    @using (Html.BeginForm("Index", "Contact", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Name:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+    <br />
+    <br />
+</div>
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayName("Email")
+        </th>
+        @*<th>
+            @Html.DisplayName("Description")
+        </th>*@
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>*@
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ContactID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ContactID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ContactID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<br />
+<br />
+
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Tablet";
+    Layout = "../Shared/_Layout.Tablet.cshtml";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+</p>
+
+<div data-role="navbar">
+    <ul>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</div>

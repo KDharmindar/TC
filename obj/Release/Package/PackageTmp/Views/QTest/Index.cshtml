@@ -1,0 +1,198 @@
+﻿@model PagedList.IPagedList<tutioncloud.Models.QTest>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@*@model IEnumerable<tutioncloud.Models.WTest>*@
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.12.4.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "../Shared/_Layout_Quester_Admin.cshtml";
+
+}
+
+@*<script type="text/javascript">
+
+        function showPopup() {
+            $("#divPopup").dialog({
+                height: 600,
+                width: 500,
+                modal: true,
+
+                button: {
+                    "OK": function () {
+                        $(this).dialog("close");
+                        alert('You selected OK !!')
+                    },
+                    "Cancel": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        }
+    </script>*@
+<br />
+<br />
+
+
+@*<h4>
+        @Html.ActionLink("Create New", "Create")
+    </h4>*@
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "QTest", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Create Test
+        </a>
+    </h4>
+</div>
+
+<br />
+<br />
+<h4>
+    Quester - Test Summary
+</h4>
+<hr />
+<br />
+<div class="col-md-6">
+    @using (Html.BeginForm("Index", "QTest", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Word Name:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>
+<br />
+<div class="col-md-6">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li><a href="Home">Main Panel</a></li>
+            <li><a href="Home">Back</a></li>
+            <li><a href="#" id="BtnFav">Add to Favourite</a></li>
+            <li><a href="#" id="BtnSkip">Skip</a></li>
+            <li><a href="#" id="BtnTest">Create Test</a></li>
+
+
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<br />
+
+<div style="height: 600px; overflow: scroll;">
+
+    <table class="table table-hover table-striped">
+        <tr>
+            <th>
+                @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            @*<th>
+                    @Html.DisplayName("Title")
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.StartTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EndTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Score)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TestTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimePerWord)
+                </th>*@
+            <th>
+                @Html.ActionLink(" Minutes / Seconds", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Seconds)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.User.Forename)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.StartTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Score)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.QTNote)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TestTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimePerWord)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Seconds)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.Forename)
+                    </td>*@
+                <td>
+                    @*<input type="button" onclick='@Url.Action("Detail", "Home", new { id = item.WTestID }, new { @class="showPopup"})' value="" />*@
+                    @*<div class="table-responsive" id="divPopup" style="display:none">
+                        </div>*@
+                    @*@Html.ActionLink("Delete", "Your-Action", new { id = item.id },
+                        new { onclick = "return confirm('Are you sure?');" })*@
+                    @Html.ActionLink("Result", "Result", new { id = item.QTestID }) |
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.QTestID }) |*@
+                    @*@Html.ActionLink("Details", "Details", new { id = item.QTestID }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.QTestID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@

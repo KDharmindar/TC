@@ -1,0 +1,761 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TuitionCloudDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Category_User" FromRole="Category" ToRole="User" />
+    <NavigationProperty Name="Choicers" Relationship="Self.FK_Choicer_Category" FromRole="Category" ToRole="Choicer" />
+    <NavigationProperty Name="Questers" Relationship="Self.FK_Quester_Category" FromRole="Category" ToRole="Quester" />
+  </EntityType>
+  <EntityType Name="Choicer">
+    <Key>
+      <PropertyRef Name="ChoicerID" />
+    </Key>
+    <Property Name="ChoicerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FCategoryID" Type="Int32" />
+    <Property Name="FCUserID" Type="Int32" />
+    <Property Name="CQuestion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Opt1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Opt2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Opt3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Opt4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Opt5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CAnswer" Type="Int32" />
+    <Property Name="IsShareOnline" Type="Boolean" />
+    <Property Name="IsFavourite" Type="Boolean" />
+    <Property Name="IsSkip" Type="Boolean" />
+    <Property Name="Appearance" Type="Int32" />
+    <Property Name="WAppearance" Type="Int32" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="AdditionalInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Choicer_Category" FromRole="Choicer" ToRole="Category" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Choicer_User" FromRole="Choicer" ToRole="User" />
+    <NavigationProperty Name="ChoiceShares" Relationship="Self.FK_ChoiceShare_Choicer" FromRole="Choicer" ToRole="ChoiceShare" />
+    <NavigationProperty Name="ChoiceTests" Relationship="Self.FK_ChoiceTest_Choicer" FromRole="Choicer" ToRole="ChoiceTest" />
+  </EntityType>
+  <EntityType Name="ChoiceShare">
+    <Key>
+      <PropertyRef Name="CShareID" />
+    </Key>
+    <Property Name="CShareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FChoicerID" Type="Int32" />
+    <Property Name="UserTo" Type="Int32" />
+    <Property Name="UserFrom" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShareDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Choicer" Relationship="Self.FK_ChoiceShare_Choicer" FromRole="ChoiceShare" ToRole="Choicer" />
+  </EntityType>
+  <EntityType Name="ChoiceTest">
+    <Key>
+      <PropertyRef Name="ChoiceTestID" />
+    </Key>
+    <Property Name="ChoiceTestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FCTestID" Type="Int32" />
+    <Property Name="FChoicerID" Type="Int32" />
+    <Property Name="Result" Type="Boolean" />
+    <Property Name="TimeSkip" Type="Int32" />
+    <Property Name="TestAppearance" Type="Int32" />
+    <NavigationProperty Name="Choicer" Relationship="Self.FK_ChoiceTest_Choicer" FromRole="ChoiceTest" ToRole="Choicer" />
+    <NavigationProperty Name="CTest" Relationship="Self.FK_ChoiceTest_CTest" FromRole="ChoiceTest" ToRole="CTest" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Contact_User" FromRole="Contact" ToRole="User" />
+  </EntityType>
+  <EntityType Name="CTest">
+    <Key>
+      <PropertyRef Name="CTestID" />
+    </Key>
+    <Property Name="CTestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FCTuserID" Type="Int32" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="CTNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestTime" Type="Boolean" />
+    <Property Name="TimePerWord" Type="Boolean" />
+    <Property Name="Minutes" Type="DateTime" Precision="3" />
+    <Property Name="Seconds" Type="DateTime" Precision="3" />
+    <Property Name="Duration" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ChoiceTests" Relationship="Self.FK_ChoiceTest_CTest" FromRole="CTest" ToRole="ChoiceTest" />
+    <NavigationProperty Name="User" Relationship="Self.FK_CTest_User" FromRole="CTest" ToRole="User" />
+    <NavigationProperty Name="CTestShares" Relationship="Self.FK_CTestShare_CTest" FromRole="CTest" ToRole="CTestShare" />
+  </EntityType>
+  <EntityType Name="CTestShare">
+    <Key>
+      <PropertyRef Name="CTestShareID" />
+    </Key>
+    <Property Name="CTestShareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FCTestID" Type="Int32" />
+    <Property Name="ShareBy" Type="Int32" />
+    <Property Name="ShareTo" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShareDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CTest" Relationship="Self.FK_CTestShare_CTest" FromRole="CTestShare" ToRole="CTest" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="NewsID" />
+    </Key>
+    <Property Name="NewsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK_News_User" FromRole="News" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Note">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FUserID" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Note_User" FromRole="Note" ToRole="User" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="QTest">
+    <Key>
+      <PropertyRef Name="QTestID" />
+    </Key>
+    <Property Name="QTestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FQTuserID" Type="Int32" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="QTNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestTime" Type="Boolean" />
+    <Property Name="TimePerWord" Type="Boolean" />
+    <Property Name="Minutes" Type="DateTime" Precision="3" />
+    <Property Name="Seconds" Type="DateTime" Precision="3" />
+    <Property Name="Duration" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="User" Relationship="Self.FK_QTest_User" FromRole="QTest" ToRole="User" />
+    <NavigationProperty Name="QTestShares" Relationship="Self.FK_QTestShare_QTest" FromRole="QTest" ToRole="QTestShare" />
+    <NavigationProperty Name="QuestTests" Relationship="Self.FK_QuestTest_QTest1" FromRole="QTest" ToRole="QuestTest" />
+  </EntityType>
+  <EntityType Name="QTestShare">
+    <Key>
+      <PropertyRef Name="TestShareID" />
+    </Key>
+    <Property Name="TestShareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FQTestID" Type="Int32" />
+    <Property Name="ShareBy" Type="Int32" />
+    <Property Name="ShareTo" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShareDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="QTest" Relationship="Self.FK_QTestShare_QTest" FromRole="QTestShare" ToRole="QTest" />
+  </EntityType>
+  <EntityType Name="Quester">
+    <Key>
+      <PropertyRef Name="QuesterID" />
+    </Key>
+    <Property Name="QuesterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FCategoryID" Type="Int32" />
+    <Property Name="FQUserID" Type="Int32" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Hint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AdditionalInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsShareOnline" Type="Boolean" />
+    <Property Name="IsFavourite" Type="Boolean" />
+    <Property Name="IsSkip" Type="Boolean" />
+    <Property Name="Appearance" Type="Int32" />
+    <Property Name="WAppearance" Type="Int32" />
+    <Property Name="Score" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Quester_Category" FromRole="Quester" ToRole="Category" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Quester_User" FromRole="Quester" ToRole="User" />
+    <NavigationProperty Name="QuestShares" Relationship="Self.FK_QuestShare_Quester" FromRole="Quester" ToRole="QuestShare" />
+    <NavigationProperty Name="QuestTests" Relationship="Self.FK_QuestTest_Quester1" FromRole="Quester" ToRole="QuestTest" />
+  </EntityType>
+  <EntityType Name="QuestShare">
+    <Key>
+      <PropertyRef Name="QShareID" />
+    </Key>
+    <Property Name="QShareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FQuesterID" Type="Int32" />
+    <Property Name="UserTo" Type="Int32" />
+    <Property Name="UserFrom" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShareDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Quester" Relationship="Self.FK_QuestShare_Quester" FromRole="QuestShare" ToRole="Quester" />
+  </EntityType>
+  <EntityType Name="QuestTest">
+    <Key>
+      <PropertyRef Name="QuestTestID" />
+    </Key>
+    <Property Name="QuestTestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FQTestID" Type="Int32" />
+    <Property Name="FQuesterID" Type="Int32" />
+    <Property Name="Result" Type="Boolean" />
+    <Property Name="TImeSkip" Type="Int32" />
+    <Property Name="TestAppearance" Type="Int32" />
+    <NavigationProperty Name="QTest" Relationship="Self.FK_QuestTest_QTest1" FromRole="QuestTest" ToRole="QTest" />
+    <NavigationProperty Name="Quester" Relationship="Self.FK_QuestTest_Quester1" FromRole="QuestTest" ToRole="Quester" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TestShare">
+    <Key>
+      <PropertyRef Name="TestShareID" />
+    </Key>
+    <Property Name="TestShareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FTestID" Type="Int32" />
+    <Property Name="ShareBy" Type="Int32" />
+    <Property Name="ShareTo" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShareDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="WTest" Relationship="Self.FK_TestShare_WTest" FromRole="TestShare" ToRole="WTest" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FUserWebID" Type="Int32" />
+    <Property Name="Forename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ConfirmPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubscribeDate" Type="DateTime" Precision="3" />
+    <Property Name="JoinDate" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Categories" Relationship="Self.FK_Category_User" FromRole="User" ToRole="Category" />
+    <NavigationProperty Name="Choicers" Relationship="Self.FK_Choicer_User" FromRole="User" ToRole="Choicer" />
+    <NavigationProperty Name="Contacts" Relationship="Self.FK_Contact_User" FromRole="User" ToRole="Contact" />
+    <NavigationProperty Name="CTests" Relationship="Self.FK_CTest_User" FromRole="User" ToRole="CTest" />
+    <NavigationProperty Name="News" Relationship="Self.FK_News_User" FromRole="User" ToRole="News" />
+    <NavigationProperty Name="Notes" Relationship="Self.FK_Note_User" FromRole="User" ToRole="Note" />
+    <NavigationProperty Name="QTests" Relationship="Self.FK_QTest_User" FromRole="User" ToRole="QTest" />
+    <NavigationProperty Name="Questers" Relationship="Self.FK_Quester_User" FromRole="User" ToRole="Quester" />
+    <NavigationProperty Name="Website" Relationship="Self.FK_User_Website" FromRole="User" ToRole="Website" />
+    <NavigationProperty Name="Wordutopias" Relationship="Self.FK_Wordutopia_User" FromRole="User" ToRole="Wordutopia" />
+    <NavigationProperty Name="WTests" Relationship="Self.FK_WTest_User" FromRole="User" ToRole="WTest" />
+  </EntityType>
+  <EntityType Name="Website">
+    <Key>
+      <PropertyRef Name="WebID" />
+    </Key>
+    <Property Name="WebID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_Website" FromRole="Website" ToRole="User" />
+  </EntityType>
+  <EntityType Name="WordShare">
+    <Key>
+      <PropertyRef Name="WShareID" />
+    </Key>
+    <Property Name="WShareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FWordID" Type="Int32" />
+    <Property Name="UserTo" Type="Int32" />
+    <Property Name="UserFrom" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShareDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Wordutopia" Relationship="Self.FK_WordShare_Wordutopia" FromRole="WordShare" ToRole="Wordutopia" />
+  </EntityType>
+  <EntityType Name="WordTest">
+    <Key>
+      <PropertyRef Name="WordTestID" />
+    </Key>
+    <Property Name="WordTestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FWtestID" Type="Int32" />
+    <Property Name="FWordID" Type="Int32" />
+    <Property Name="Result" Type="Boolean" />
+    <Property Name="TImeSkip" Type="Int32" />
+    <Property Name="TestAppearance" Type="Int32" />
+    <NavigationProperty Name="Wordutopia" Relationship="Self.FK_WordTest_Wordutopia" FromRole="WordTest" ToRole="Wordutopia" />
+    <NavigationProperty Name="WTest" Relationship="Self.FK_WordTest_WTest" FromRole="WordTest" ToRole="WTest" />
+  </EntityType>
+  <EntityType Name="Wordutopia">
+    <Key>
+      <PropertyRef Name="WordID" />
+    </Key>
+    <Property Name="WordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FWUserID" Type="Int32" />
+    <Property Name="Word" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pronounciation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phrase" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Hint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Definition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Synonym" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsShareOnline" Type="Boolean" />
+    <Property Name="IsFavourite" Type="Boolean" />
+    <Property Name="IsSkip" Type="Boolean" />
+    <Property Name="Appearance" Type="Int32" />
+    <Property Name="WAppreance" Type="Int32" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="AdditionInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Wordutopia_User" FromRole="Wordutopia" ToRole="User" />
+    <NavigationProperty Name="WordShares" Relationship="Self.FK_WordShare_Wordutopia" FromRole="Wordutopia" ToRole="WordShare" />
+    <NavigationProperty Name="WordTests" Relationship="Self.FK_WordTest_Wordutopia" FromRole="Wordutopia" ToRole="WordTest" />
+  </EntityType>
+  <EntityType Name="WTest">
+    <Key>
+      <PropertyRef Name="WTestID" />
+    </Key>
+    <Property Name="WTestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FWTUserID" Type="Int32" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="TNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TestTime" Type="Boolean" />
+    <Property Name="TimePerWord" Type="Boolean" />
+    <Property Name="Minutes" Type="DateTime" Precision="3" />
+    <Property Name="Seconds" Type="DateTime" Precision="3" />
+    <Property Name="Duration" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TestShares" Relationship="Self.FK_TestShare_WTest" FromRole="WTest" ToRole="TestShare" />
+    <NavigationProperty Name="User" Relationship="Self.FK_WTest_User" FromRole="WTest" ToRole="User" />
+    <NavigationProperty Name="WordTests" Relationship="Self.FK_WordTest_WTest" FromRole="WTest" ToRole="WordTest" />
+  </EntityType>
+  <Association Name="FK_Category_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Choicer_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Choicer" Type="Self.Choicer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Choicer">
+        <PropertyRef Name="FCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quester_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Quester" Type="Self.Quester" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Quester">
+        <PropertyRef Name="FCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Choicer_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Choicer" Type="Self.Choicer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Choicer">
+        <PropertyRef Name="FCUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChoiceShare_Choicer">
+    <End Role="Choicer" Type="Self.Choicer" Multiplicity="0..1" />
+    <End Role="ChoiceShare" Type="Self.ChoiceShare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Choicer">
+        <PropertyRef Name="ChoicerID" />
+      </Principal>
+      <Dependent Role="ChoiceShare">
+        <PropertyRef Name="FChoicerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChoiceTest_Choicer">
+    <End Role="Choicer" Type="Self.Choicer" Multiplicity="0..1" />
+    <End Role="ChoiceTest" Type="Self.ChoiceTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Choicer">
+        <PropertyRef Name="ChoicerID" />
+      </Principal>
+      <Dependent Role="ChoiceTest">
+        <PropertyRef Name="FChoicerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChoiceTest_CTest">
+    <End Role="CTest" Type="Self.CTest" Multiplicity="0..1" />
+    <End Role="ChoiceTest" Type="Self.ChoiceTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTest">
+        <PropertyRef Name="CTestID" />
+      </Principal>
+      <Dependent Role="ChoiceTest">
+        <PropertyRef Name="FCTestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contact_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTest_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="CTest" Type="Self.CTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CTest">
+        <PropertyRef Name="FCTuserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTestShare_CTest">
+    <End Role="CTest" Type="Self.CTest" Multiplicity="0..1" />
+    <End Role="CTestShare" Type="Self.CTestShare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CTest">
+        <PropertyRef Name="CTestID" />
+      </Principal>
+      <Dependent Role="CTestShare">
+        <PropertyRef Name="FCTestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Note_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Note" Type="Self.Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Note">
+        <PropertyRef Name="FUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QTest_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="QTest" Type="Self.QTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="QTest">
+        <PropertyRef Name="FQTuserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QTestShare_QTest">
+    <End Role="QTest" Type="Self.QTest" Multiplicity="0..1" />
+    <End Role="QTestShare" Type="Self.QTestShare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QTest">
+        <PropertyRef Name="QTestID" />
+      </Principal>
+      <Dependent Role="QTestShare">
+        <PropertyRef Name="FQTestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestTest_QTest1">
+    <End Role="QTest" Type="Self.QTest" Multiplicity="0..1" />
+    <End Role="QuestTest" Type="Self.QuestTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QTest">
+        <PropertyRef Name="QTestID" />
+      </Principal>
+      <Dependent Role="QuestTest">
+        <PropertyRef Name="FQTestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quester_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Quester" Type="Self.Quester" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Quester">
+        <PropertyRef Name="FQUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestShare_Quester">
+    <End Role="Quester" Type="Self.Quester" Multiplicity="0..1" />
+    <End Role="QuestShare" Type="Self.QuestShare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quester">
+        <PropertyRef Name="QuesterID" />
+      </Principal>
+      <Dependent Role="QuestShare">
+        <PropertyRef Name="FQuesterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestTest_Quester1">
+    <End Role="Quester" Type="Self.Quester" Multiplicity="0..1" />
+    <End Role="QuestTest" Type="Self.QuestTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quester">
+        <PropertyRef Name="QuesterID" />
+      </Principal>
+      <Dependent Role="QuestTest">
+        <PropertyRef Name="FQuesterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestShare_WTest">
+    <End Role="WTest" Type="Self.WTest" Multiplicity="0..1" />
+    <End Role="TestShare" Type="Self.TestShare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WTest">
+        <PropertyRef Name="WTestID" />
+      </Principal>
+      <Dependent Role="TestShare">
+        <PropertyRef Name="FTestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Website">
+    <End Role="Website" Type="Self.Website" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Website">
+        <PropertyRef Name="WebID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="FUserWebID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Wordutopia_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Wordutopia" Type="Self.Wordutopia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Wordutopia">
+        <PropertyRef Name="FWUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WTest_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="WTest" Type="Self.WTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="WTest">
+        <PropertyRef Name="FWTUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WordShare_Wordutopia">
+    <End Role="Wordutopia" Type="Self.Wordutopia" Multiplicity="0..1" />
+    <End Role="WordShare" Type="Self.WordShare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Wordutopia">
+        <PropertyRef Name="WordID" />
+      </Principal>
+      <Dependent Role="WordShare">
+        <PropertyRef Name="FWordID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WordTest_Wordutopia">
+    <End Role="Wordutopia" Type="Self.Wordutopia" Multiplicity="0..1" />
+    <End Role="WordTest" Type="Self.WordTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Wordutopia">
+        <PropertyRef Name="WordID" />
+      </Principal>
+      <Dependent Role="WordTest">
+        <PropertyRef Name="FWordID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WordTest_WTest">
+    <End Role="WTest" Type="Self.WTest" Multiplicity="0..1" />
+    <End Role="WordTest" Type="Self.WordTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WTest">
+        <PropertyRef Name="WTestID" />
+      </Principal>
+      <Dependent Role="WordTest">
+        <PropertyRef Name="FWtestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TuitionCloudDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Choicers" EntityType="Self.Choicer" />
+    <EntitySet Name="ChoiceShares" EntityType="Self.ChoiceShare" />
+    <EntitySet Name="ChoiceTests" EntityType="Self.ChoiceTest" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="CTests" EntityType="Self.CTest" />
+    <EntitySet Name="CTestShares" EntityType="Self.CTestShare" />
+    <EntitySet Name="News" EntityType="Self.News" />
+    <EntitySet Name="Notes" EntityType="Self.Note" />
+    <EntitySet Name="QTests" EntityType="Self.QTest" />
+    <EntitySet Name="QTestShares" EntityType="Self.QTestShare" />
+    <EntitySet Name="Questers" EntityType="Self.Quester" />
+    <EntitySet Name="QuestShares" EntityType="Self.QuestShare" />
+    <EntitySet Name="QuestTests" EntityType="Self.QuestTest" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TestShares" EntityType="Self.TestShare" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Websites" EntityType="Self.Website" />
+    <EntitySet Name="WordShares" EntityType="Self.WordShare" />
+    <EntitySet Name="WordTests" EntityType="Self.WordTest" />
+    <EntitySet Name="Wordutopias" EntityType="Self.Wordutopia" />
+    <EntitySet Name="WTests" EntityType="Self.WTest" />
+    <AssociationSet Name="FK_Category_User" Association="Self.FK_Category_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Choicer_Category" Association="Self.FK_Choicer_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Choicer" EntitySet="Choicers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quester_Category" Association="Self.FK_Quester_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Quester" EntitySet="Questers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Choicer_User" Association="Self.FK_Choicer_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Choicer" EntitySet="Choicers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChoiceShare_Choicer" Association="Self.FK_ChoiceShare_Choicer">
+      <End Role="Choicer" EntitySet="Choicers" />
+      <End Role="ChoiceShare" EntitySet="ChoiceShares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChoiceTest_Choicer" Association="Self.FK_ChoiceTest_Choicer">
+      <End Role="Choicer" EntitySet="Choicers" />
+      <End Role="ChoiceTest" EntitySet="ChoiceTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChoiceTest_CTest" Association="Self.FK_ChoiceTest_CTest">
+      <End Role="CTest" EntitySet="CTests" />
+      <End Role="ChoiceTest" EntitySet="ChoiceTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contact_User" Association="Self.FK_Contact_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTest_User" Association="Self.FK_CTest_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="CTest" EntitySet="CTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTestShare_CTest" Association="Self.FK_CTestShare_CTest">
+      <End Role="CTest" EntitySet="CTests" />
+      <End Role="CTestShare" EntitySet="CTestShares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_User" Association="Self.FK_News_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Note_User" Association="Self.FK_Note_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Note" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QTest_User" Association="Self.FK_QTest_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="QTest" EntitySet="QTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QTestShare_QTest" Association="Self.FK_QTestShare_QTest">
+      <End Role="QTest" EntitySet="QTests" />
+      <End Role="QTestShare" EntitySet="QTestShares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestTest_QTest1" Association="Self.FK_QuestTest_QTest1">
+      <End Role="QTest" EntitySet="QTests" />
+      <End Role="QuestTest" EntitySet="QuestTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quester_User" Association="Self.FK_Quester_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Quester" EntitySet="Questers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestShare_Quester" Association="Self.FK_QuestShare_Quester">
+      <End Role="Quester" EntitySet="Questers" />
+      <End Role="QuestShare" EntitySet="QuestShares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestTest_Quester1" Association="Self.FK_QuestTest_Quester1">
+      <End Role="Quester" EntitySet="Questers" />
+      <End Role="QuestTest" EntitySet="QuestTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestShare_WTest" Association="Self.FK_TestShare_WTest">
+      <End Role="WTest" EntitySet="WTests" />
+      <End Role="TestShare" EntitySet="TestShares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Website" Association="Self.FK_User_Website">
+      <End Role="Website" EntitySet="Websites" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Wordutopia_User" Association="Self.FK_Wordutopia_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Wordutopia" EntitySet="Wordutopias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WTest_User" Association="Self.FK_WTest_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="WTest" EntitySet="WTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WordShare_Wordutopia" Association="Self.FK_WordShare_Wordutopia">
+      <End Role="Wordutopia" EntitySet="Wordutopias" />
+      <End Role="WordShare" EntitySet="WordShares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WordTest_Wordutopia" Association="Self.FK_WordTest_Wordutopia">
+      <End Role="Wordutopia" EntitySet="Wordutopias" />
+      <End Role="WordTest" EntitySet="WordTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WordTest_WTest" Association="Self.FK_WordTest_WTest">
+      <End Role="WTest" EntitySet="WTests" />
+      <End Role="WordTest" EntitySet="WordTests" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

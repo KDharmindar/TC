@@ -1,0 +1,60 @@
+﻿@*@model IEnumerable<tutioncloud.Models.News>*@
+@model PagedList.IPagedList<tutioncloud.Models.News>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+<h4> Latest Newsfeed </h4>
+<hr />
+<br />
+<br />
+<table class="table table-hover table-striped">
+    <tr>
+        <th>
+            @Html.ActionLink("Title", "UserIndex", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayName("Date")
+        </th>
+        <th>
+            @Html.DisplayName("News Brief")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+       
+        <td>
+           @if (item.Date!=null)
+           {
+               var date = string.Format("{0:dd-MMM-yyyy}", Convert.ToDateTime(item.Date));
+               <span>@date</span>
+           }
+        </td>
+        <td>
+            @Html.Raw(HttpUtility.HtmlDecode(tutioncloud.Helpers.ExtensionMethods.Chop(item.Description, 100)))
+        </td>
+        <td>
+            @Html.ActionLink("View", "Details", new { id = item.NewsID }) 
+        </td>
+       
+    </tr>
+}
+
+</table>
+<br />
+<br />
+<br />
+
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("UserIndex",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

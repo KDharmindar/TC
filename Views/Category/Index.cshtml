@@ -1,0 +1,112 @@
+﻿@model PagedList.IPagedList<tutioncloud.Models.Category>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@*@model IEnumerable<tutioncloud.Models.Note>*@
+
+@{
+    ViewBag.Title = "Index";
+    var website = ViewBag.webname;
+    if (website == "Wordutopia")
+    {
+        Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+    }
+    else if (website == "Quester")
+    {
+        Layout = "../Shared/_Layout_Quester_Admin.cshtml";
+    }
+    else if (website == "Choicer")
+    {
+        Layout = "../Shared/_Layout_Choicer_Admin.cshtml";
+    }}
+
+<br />
+<br />
+@*<h4>
+        @Html.ActionLink("Create New", "Create")
+    </h4>*@
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "Category", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Add Categroy
+        </a>
+    </h4>
+</div>
+
+<br />
+<br />
+<h4>Categories List</h4>
+<br />
+<div class="col-md-6">
+
+    @using (Html.BeginForm("Index", "Category", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Category Name:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>
+    <br />
+    <div class="col-md-6">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                Tasks Dropdown List
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <!-- Add header here -->
+                <li>@Html.ActionLink("Create Category", "Create", "Category")</li>
+                <li>@Html.ActionLink("Categories List", "Index", "Category")</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <br />
+    <div style="height: 600px; overflow: scroll;">
+
+        <br />
+        <table class="table table-hover table-striped">
+            <tr>
+                <th>
+                    @Html.ActionLink(" Categories ", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    @*<td>
+                         </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.Forename)
+                        </td>*@
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.CategoryID }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CategoryID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <br />
+    @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                @Html.PagedListPager(Model, page => Url.Action("Index",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@

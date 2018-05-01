@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="537114b639954ff7a81bf1a4129a023a" Name="Diagram1">
+        <EntityTypeShape EntityType="TuitionCloudDBModel.Category" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.Choicer" Width="1.5" PointX="10.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.ChoiceShare" Width="1.5" PointX="12.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.ChoiceTest" Width="1.5" PointX="15.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.Contact" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.CTest" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.CTestShare" Width="1.5" PointX="7.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.News" Width="1.5" PointX="5.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.Note" Width="1.5" PointX="5.25" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.QTest" Width="1.5" PointX="5.25" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.QTestShare" Width="1.5" PointX="7.5" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.Quester" Width="1.5" PointX="7.5" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.QuestShare" Width="1.5" PointX="9.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.QuestTest" Width="1.5" PointX="9.75" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.TestShare" Width="1.5" PointX="7.5" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.User" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.Website" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.WordShare" Width="1.5" PointX="7.5" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.WordTest" Width="1.5" PointX="10.5" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.Wordutopia" Width="1.5" PointX="5.25" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TuitionCloudDBModel.WTest" Width="1.5" PointX="5.25" PointY="34.75" IsExpanded="true" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_Category_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_Choicer_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_Quester_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_Choicer_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_ChoiceShare_Choicer" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_ChoiceTest_Choicer" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_ChoiceTest_CTest" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_Contact_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_CTest_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_CTestShare_CTest" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_News_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_Note_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_QTest_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_QTestShare_QTest" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_QuestTest_QTest1" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_Quester_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_QuestShare_Quester" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_QuestTest_Quester1" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_TestShare_WTest" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_User_Website" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_Wordutopia_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_WTest_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_WordShare_Wordutopia" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_WordTest_Wordutopia" ManuallyRouted="false" />
+        <AssociationConnector Association="TuitionCloudDBModel.FK_WordTest_WTest" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

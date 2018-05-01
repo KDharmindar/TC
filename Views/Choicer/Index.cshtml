@@ -1,0 +1,269 @@
+﻿@model PagedList.IPagedList<tutioncloud.Models.Choicer>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@*@model IEnumerable<tutioncloud.Models.Quester>*@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "../Shared/_Layout_Choicer_Admin.cshtml";
+
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#BtnFav').click(function () {
+            var list = [];
+            $('#tblword input:checked').each(function () {
+                list.push(this.value);
+            });
+            // now names contains all of the names of checked checkboxes
+            // do something with it for excamle post with ajax
+            $.ajax({
+                url: '@Url.Action("Index", "Choicer")',
+                type: 'POST',
+                data: { Parameters: list },
+                success: function (result) {
+                    alert("success")
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+    //////////////////  for  add skiplist working  ////////////////
+    $(document).ready(function () {
+        $('#BtnSkip').click(function () {
+            var skiplist = [];
+            $('#tblword input:checked').each(function () {
+                skiplist.push(this.value);
+            });
+
+            $.ajax({
+                url: '@Url.Action("Index", "Choicer")',
+                type: 'POST',
+                data: { SkipParameters: skiplist },
+                success: function (result) {
+                    alert("success")
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });
+
+    @*////////////// to add test words /////////
+
+    $(document).ready(function () {
+        $('#BtnTest').click(function () {
+            var testlist = [];
+            $('#tblword input:checked').each(function () {
+                testlist.push(this.value);
+            });
+            // now names contains all of the names of checked checkboxes
+            // do something with it for excamle post with ajax
+            $.ajax({
+                url: '@Url.Action("Index","WordsQ")',
+                type: 'POST',
+                data: { TestWordsParameters: testlist },
+                success: function (result) {
+                    alert("success")
+                    window.location.href = '/test/Create';
+                },
+                error: function (result) {
+                    alert("error!");
+                }
+            });   //end ajax
+        });
+    });*@
+
+</script>
+
+<br />
+<br />
+@*<h4>
+        @Html.ActionLink("Create New", "Create")
+    </h4>*@
+<div class="col-md-4">
+    <h4>
+        <a href="@Url.Action("Create", "Choicer", null)" target="_blank">
+            <img src="~/images/Create.png" style="width: 50px; height: 50px "> Add Question
+        </a>
+    </h4>
+</div>
+
+<br />
+<br />
+<h4>Questions List</h4>
+<br />
+<div class="col-md-6">
+    @using (Html.BeginForm("Index", "Choicer", FormMethod.Get))
+    {
+        <div class="form-group">
+            Search By Word Name:
+            <p>
+                @Html.Editor("SearchString", ViewBag.CurrentFilter as string, new { htmlAttributes = new { @class = "form-control col-md-2" } })
+                &nbsp;  <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+        </div>
+
+    }
+</div>
+<br />
+<div class="col-md-6">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Tasks Dropdown List
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <!-- Add header here -->
+            <li>@Html.ActionLink("Main Panel", "Home", "Choicer")</li>
+            <li>@Html.ActionLink("Questions List", "Index", "Choicer")</li>  
+            <li><a href="#" id="BtnFav">Add to Favourite</a></li>
+            <li><a href="#" id="BtnSkip">Skip List</a></li>
+            <li>@Html.ActionLink("Exams", "Index", "CTest")</li>
+            <li>@Html.ActionLink("Sharing", "MainShare", "ChoiceShare")</li>
+        </ul>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<br />
+<div style="height: 600px; overflow: scroll;">
+
+    <div id="tblword">
+        <br />
+        <table class="table table-hover table-striped">
+
+            <tr>
+                <th>
+                    @Html.DisplayName("Select")
+                </th>
+
+                <th>
+                    @Html.ActionLink("Questions", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.ActionLink(" Category ", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Pronounciation)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Phrase)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Hint)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Definition)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Synonym)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsShareOnline)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsFavourite)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsSkip)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WAppreance)
+                    </th>*@
+
+                @*<th>
+                        @Html.DisplayNameFor(model => model.AdditionInfo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.User.Forename)
+                    </th>*@
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="selected" value=@item.ChoicerID />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CQuestion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.Pronounciation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phrase)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Hint)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Definition)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Synonym)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsShareOnline)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsFavourite)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsSkip)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Appearance)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WAppreance)
+                        </td>*@
+
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.AdditionInfo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User.Forename)
+                        </td>*@
+                    <td>
+                        @*@Html.ActionLink("Answer", "Answer", new { id = item.ChoicerID }) |*@
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ChoicerID }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.ChoicerID }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ChoicerID })
+
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>
+
+        @*<ul class="nav navbar-nav" style="text-align: center;">
+                <li><a href="#" id="BtnFav">Add to Favourite</a></li>
+                <li><a href="#" id="BtnSkip">Skip</a></li>
+
+            </ul>*@
+    </div>
+    <br />
+    <br />
+    <br />
+
+    @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@

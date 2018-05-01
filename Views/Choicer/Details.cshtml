@@ -1,0 +1,159 @@
+﻿@model tutioncloud.Models.Choicer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "../Shared/_Layout_Choicer_Admin.cshtml";
+
+}
+<br />
+<br />
+
+<h4>Choicer - Details</h4>
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Question")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CQuestion)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Option 1")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opt1)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Option 2")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opt2)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Option 3")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opt3)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Option 4")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opt4)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Option 5")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opt5)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Category")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.CAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAnswer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsShareOnline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsShareOnline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFavourite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFavourite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsSkip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsSkip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appearance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appearance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WAppearance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WAppearance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Forename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Forename)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ChoicerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

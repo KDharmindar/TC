@@ -1,0 +1,79 @@
+﻿@using tutioncloud.ViewModels
+
+@model WordutopiaViewModel
+
+@{
+    ViewBag.Title = "Home";
+
+    Layout = "../Shared/_Layout_Wordutopia_Admin.cshtml";
+
+}
+
+@*<h4>&nbsp; &nbsp;&nbsp; Wordutopia - Home</h4>*@
+
+@using (Html.BeginForm())
+{
+    <div ng-app="wordutopiaApp" class="form-horizontal">
+        <div ng-controller="wordutopiaController as vm" ng-init="vm.initializeController(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+            @Html.HiddenFor(model => model.WordID)
+            @Html.Hidden("baseUrl", @Request.Url.AbsolutePath)
+            @Html.HiddenFor(model => model.ListOfPreviousWords)
+            @Html.AntiForgeryToken()
+            <hr />
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a id="lnkPrevious" ng-click="vm.getWord($event)" title="Previous" href="javascript:void(0);">
+                            <img alt="List View" src="@Url.Content("~/images/prev.png")">
+                            Previous
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <button class="btn btn-block btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                Tasks Dropdown List
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="width:100%">
+
+                                <li>@*@Html.ActionLink("Main Panel", "Home", "Wordutopia")*@</li>
+                                <li>@Html.ActionLink("Back", "Home", "Wordutopia", new { onclick = "history.back();" })</li>
+                                <li>@Html.ActionLink("Add New Word", "Create", "Wordutopia")</li>
+                                <li>@Html.ActionLink("Add New Note", "Create", "Note")</li>
+                                <li><a id="lnkAddToFavourite" href="javascript:void(0)" ng-click="vm.addToFavourite(vm.wordutopia.WordID)">Add to Favourite</a></li>
+                                <li><a id="lnkAddToSkippedList" href="javascript:void(0)" ng-click="vm.addToFavourite(vm.wordutopia.WordID)">Add to Skipped List</a></li>
+                                <li><a id="lnkEditWord" href="@Url.Action("Edit",new {id=Model.WordID})">Edit Word</a></li>
+                                <li><a id="lnkWordSynonym" href="http://www.thesaurus.com/browse/@Model.Word" target="_blank">*Find Synonym</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a id="lnkNext" ng-click="vm.getWord($event)"  href="javascript:void(0);" title="Next">
+                            Next  <img alt="List View" src="@Url.Content("~/images/next.png")">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @if (ViewBag.ViewType == "reverse")
+            {
+                @Html.Partial("_PartialReverse")
+            }
+            else
+            {
+                @Html.Partial("_PartialNormal")
+            }
+
+        </div>
+    </div>
+}
+
+
+
+@section Scripts{
+
+
+<script type="text/javascript" src="@Url.Content("~/js/Angular/Wordutopia/module.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/js/Angular/Wordutopia/controller.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/Angular/Wordutopia/service.js")"></script>
+
+}
